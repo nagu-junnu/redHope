@@ -1,0 +1,38 @@
+# Node modules
+node_modules/
+
+# Logs
+logs
+*.log
+npm-debug.log*
+
+# dotenv environment files
+.env
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Build directories
+/dist
+/build
+
+# MongoDB data files (if any)
+*.local
+
+# IDE folders
+.vscode/
+.idea/
+
+# React-specific
+*.env.local
+*.env.development.local
+*.env.test.local
+*.env.production.local
+
+# Coverage and test output
+coverage/
+
+# Optional: Ignore backend uploads or temp folders
+uploads/
+tmp/
