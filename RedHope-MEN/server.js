@@ -2,6 +2,7 @@ require("dotenv").config();
 const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
+const path = require('path');
 const nodemailer = require("nodemailer");
 const app = express();
 app.use(express.json()); // Middleware to parse JSON request body
@@ -205,8 +206,19 @@ app.post("/send-email", async (req, res) => {
 
 
 
+ 
+
+
+
 
 
 const PORT = process.env.PORT || 5000;
 
-app.listen(PORT,()=>console.log('Server running on port'))
+app.use(express.static(path.join(__dirname, "client")));
+
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "client", "index.html"));
+});
+
+
+app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
